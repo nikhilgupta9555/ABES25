@@ -4,7 +4,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background: #f4f4f4;
+    color: #111;
+}
 
+/* Header / Nav */
 .navbar{
     height: 60px;
     background-color: #0f1111;
@@ -27,7 +32,6 @@
     background-size: cover;
     height: 50px;
     width: 100%;
-    
 }
 
 .border{
@@ -39,38 +43,31 @@
     padding: 6px 6px 6px 6px;
 }
 
-
-/* box2 */
-
-
+/* small address / nav blocks */
 .deliver{
     color: #CCCCCC;
     font-size: .70rem;
     margin-left: 20px;
 }
-
-
 .India{
     color: white;
     font-size: 1rem;
 }
-
 .add-icon{
     display: flex;
     align-items: center;
 }
 
+/* Nav helper classes */
 .nav-address{ display:flex; gap:6px; align-items:center; }
-.nav-singin{ padding: 6px 8px; text-align:center; }
-.nav-singin p{ line-height: 1.05; }
+.nav-singin{ padding: 6px 8px; text-align:center; color:#f0f0f0 }
+.nav-singin p{ line-height: 1.05; margin: 0; }
 .nav-second{ font-size: .9rem; font-weight: 600 }
 .nav-cart{ display:flex; gap:6px; align-items:center; padding: 6px 10px }
 .cart{ font-size: 1.2rem; margin-right: 6px }
 .nav-cart #cartCounter{ background: #f08804; color: #111; padding: 4px 8px; border-radius: 14px; font-weight:700 }
 
-
-/* box3 */
-
+/* Search */
 .nav-search{
     display: flex;
     background-color: #fff;
@@ -78,32 +75,36 @@
     height: 40px;
     border-radius: 4px;
     justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .nav-search:hover{
-    border: 2px solid orange;
+    border: 2px solid rgba(255,165,0,0.6);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
 .search-select{
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     background-color: #e6e6e6;
-    width: 50px;
+    width: 70px;
     text-align: center;
     border: none;
+    height: 32px;
 }
-
 
 .search-input{
     width: 100%;
     font-size: 1rem;
     padding: 8px 10px 10px 10px;
     border: none;
+    outline: none;
 }
 
 .search-icon{
     width: 45px;
-    height: 40px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,8 +115,7 @@
     color:  #292c2c;
 }
 
-
-/* ---------- New styles for front page ---------- */
+/* ---------- Hero / Banner ---------- */
 .hero{
     background: linear-gradient(90deg, #f0c14b 0%, #ffa000 100%);
     padding: 60px 20px;
@@ -142,11 +142,13 @@
     border-radius: 4px;
 }
 
+/* ---------- Categories ---------- */
 .categories{
     display: flex;
     justify-content: center;
     gap: 18px;
     padding: 24px;
+    flex-wrap: wrap;
 }
 .category-card{
     text-align: center;
@@ -155,6 +157,11 @@
     padding: 12px;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.category-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 .category-card img{
     width: 100%;
@@ -162,6 +169,7 @@
     border-radius: 4px;
 }
 
+/* ---------- Product Grid ---------- */
 .product-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -177,6 +185,11 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.product-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .product-card img{
     width: 100%;
@@ -215,6 +228,7 @@
     cursor: default;
 }
 
+/* Footer */
 .site-footer{
     background: #0f1111;
     color: #ccc;
@@ -223,8 +237,13 @@
 }
 
 /* Responsive tweaks */
+@media (max-width: 900px){
+    .nav-search{ width: 520px; }
+}
 @media (max-width: 700px){
     .nav-search{ width: 360px; }
     .hero-content h1{ font-size: 1.3rem; }
-    .categories{ flex-wrap: wrap; gap: 12px; }
+    .categories{ gap: 12px; }
+    .nav-singin, .nav-address, .nav-cart{ display: none; }
+    .navbar{ justify-content: space-between; }
 }
