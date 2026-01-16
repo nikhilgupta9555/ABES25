@@ -33,16 +33,12 @@
     border: 2px solid transparent;
 }
 
-.border:hover{
+.borderhover{
     border: 2px solid white;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 6px 6px 6px 
 }
 
-
-/* box2 */
-
-
-.deliver{
+deliver{
     color: #CCCCCC;
     font-size: .70rem;
     margin-left: 20px;
@@ -68,7 +64,7 @@
 .nav-cart #cartCounter{ background: #f08804; color: #111; padding: 4px 8px; border-radius: 14px; font-weight:700 }
 
 
-/* box3 */
+
 
 .nav-search{
     display: flex;
@@ -114,7 +110,7 @@
 }
 
 
-/* ---------- New styles for front page ---------- */
+
 .hero{
     background: linear-gradient(90deg, #f0c14b 0%, #ffa000 100%);
     padding: 60px 20px;
@@ -221,7 +217,7 @@
     text-align: center;
 }
 
-/* Responsive tweaks */
+
 @media (max-width: 700px){
     .nav-search{ width: 360px; }
     .hero-content h1{ font-size: 1.3rem; }
